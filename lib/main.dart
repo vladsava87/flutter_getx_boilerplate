@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'infrastructure/constants/app_strings.dart';
 import 'infrastructure/data/db_provider.dart';
 import 'infrastructure/router.dart';
