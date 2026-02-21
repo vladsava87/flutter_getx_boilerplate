@@ -8,7 +8,7 @@ A modern, scalable Flutter boilerplate utilizing **GetX** for state management, 
     *   **State Management:** Reactive programming using `GetxController` and `.obs`.
     *   **Routing:** Centralized navigation setup in `AppRouter`.
     *   **Dependency Injection:** Lazy and smart service registration using `Bindings` (`MainBindings`, `DatabaseBindings`).
-    *   **Internationalization (i18n):** Built-in translation handling with `AppTranslations` and `AppStrings`.
+    *   **Internationalization (i18n):** Deeply integrated JSON asset-based translations (`assets/lang/en.json`, `es.json`) loaded dynamically at startup via `AppTranslations` and `AppStrings`.
 *   **Secure Local Storage:**
     *   **Sqflite & SQLCipher:** Fully implemented `DbProvider` ensuring encrypted local databases.
     *   **Concurrent Open Protection:** Uses `Completer` logic to prevent multiple database initialization attempts.
@@ -67,6 +67,23 @@ flutter pub get
 Run the application on an emulator or a connected device:
 ```bash
 flutter run
+```
+
+### 4. Renaming the Application
+When starting a new project from this boilerplate, you generally want to rename the app's Display Name and Bundle ID/Package Name. We recommend using the [rename](https://pub.dev/packages/rename) package for this because it modifies iOS, Android, macOS, Linux, and Windows directories seamlessly.
+
+First, install the package globally if you haven't already:
+```bash
+dart pub global activate rename
+```
+
+Then, run the target commands inside the `flutter_getx_boilerplate` root to rename your Bundle Id and Application Name:
+```bash
+# Change the Application / Display Name
+rename setAppName --targets ios,android --value "Your New App Name"
+
+# Change the Bundle ID / Package Name
+rename setBundleId --targets ios,android --value "com.yourcompany.yourapp"
 ```
 
 ## 🔒 Database Details
