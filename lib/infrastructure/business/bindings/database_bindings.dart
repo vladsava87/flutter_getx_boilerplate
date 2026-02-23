@@ -4,7 +4,7 @@ import '../../data/providers/example_table_provider.dart';
 import '../../data/repositories/example_repository.dart';
 import '../../data/providers/i_db_provider.dart';
 import '../../data/providers/i_example_table_provider.dart';
-import '../../../../domain/repositories/i_example_repository.dart';
+import '../../../domain/interfaces/repositories/example_repository_interface.dart';
 
 class DatabaseBindings extends Bindings {
   @override

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../../../domain/services/i_example_service.dart';
+import '../../../domain/interfaces/services/example_service_interface.dart';
 
 class HomeController extends GetxController {
   final IExampleService _exampleService;

@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
 import '../../services/example_service.dart';
-import '../../../../domain/services/i_example_service.dart';
+import '../../../domain/interfaces/services/example_service_interface.dart';
 
 class MainBindings extends Bindings {
   @override

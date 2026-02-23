@@ -1,5 +1,5 @@
 import '../../../../domain/models/example_model.dart';
-import '../../../../domain/repositories/i_example_repository.dart';
+import '../../../domain/interfaces/repositories/example_repository_interface.dart';
 import '../models/example_entity.dart';
 import '../providers/i_example_table_provider.dart';
 

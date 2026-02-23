@@ -1,4 +1,4 @@
-import '../models/example_model.dart';
+import '../../models/example_model.dart';
 
 abstract class IExampleRepository {
   Future<ExampleModel> save(ExampleModel item);

@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import '../../../domain/services/i_example_service.dart';
+import '../../domain/interfaces/services/example_service_interface.dart';
 
 class ExampleService extends GetxService implements IExampleService {
   @override
