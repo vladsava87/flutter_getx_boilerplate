@@ -2,9 +2,9 @@ import 'package:get/get.dart';
 import '../../data/db_provider.dart';
 import '../../data/providers/example_table_provider.dart';
 import '../../data/repositories/example_repository.dart';
-import '../../data/providers/i_db_provider.dart';
-import '../../data/providers/i_example_table_provider.dart';
-import '../../../domain/interfaces/repositories/example_repository_interface.dart';
+import '../../../domain/interfaces/data/i_db_provider.dart';
+import '../../../domain/interfaces/data/i_example_table_provider.dart';
+import '../../../domain/interfaces/data/i_example_repository.dart';
 
 class DatabaseBindings extends Bindings {
   @override

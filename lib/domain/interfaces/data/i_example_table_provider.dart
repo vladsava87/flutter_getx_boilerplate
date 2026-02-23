@@ -1,4 +1,4 @@
-import '../models/example_entity.dart';
+import '../../../infrastructure/data/models/example_entity.dart';
 
 abstract class IExampleTableProvider {
   Future<int> insert(ExampleEntity entity);

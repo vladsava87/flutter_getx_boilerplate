@@ -1,7 +1,7 @@
 import '../../../../domain/models/example_model.dart';
-import '../../../domain/interfaces/repositories/example_repository_interface.dart';
+import '../../../domain/interfaces/data/i_example_repository.dart';
 import '../models/example_entity.dart';
-import '../providers/i_example_table_provider.dart';
+import '../../../domain/interfaces/data/i_example_table_provider.dart';
 
 class ExampleRepository implements IExampleRepository {
   final IExampleTableProvider _provider;

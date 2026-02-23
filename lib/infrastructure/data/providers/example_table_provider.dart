@@ -1,6 +1,6 @@
 import 'package:sqflite_sqlcipher/sqflite.dart';
-import 'i_db_provider.dart';
-import 'i_example_table_provider.dart';
+import '../../../domain/interfaces/data/i_db_provider.dart';
+import '../../../domain/interfaces/data/i_example_table_provider.dart';
 import '../models/example_entity.dart';
 
 class ExampleTableProvider implements IExampleTableProvider {

@@ -5,7 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:sqflite_sqlcipher/sqflite.dart';
 import 'package:path/path.dart' as path;
-import 'providers/i_db_provider.dart';
+import '../../domain/interfaces/data/i_db_provider.dart';
 
 class DbProvider extends GetxService implements IDbProvider {
   static const _dbName = 'app_database.db';
