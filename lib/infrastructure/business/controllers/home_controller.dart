@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import '../../services/example_service.dart';
+import '../../../../domain/services/i_example_service.dart';
 
 class HomeController extends GetxController {
-  final ExampleService _exampleService;
+  final IExampleService _exampleService;
 
   HomeController(this._exampleService);
 

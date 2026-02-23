@@ -5,19 +5,22 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:sqflite_sqlcipher/sqflite.dart';
 import 'package:path/path.dart' as path;
+import 'providers/i_db_provider.dart';
 
-class DbProvider extends GetxService {
+class DbProvider extends GetxService implements IDbProvider {
   static const _dbName = 'app_database.db';
   static const _dbVersion = 1;
 
   Database? _db;
   Completer<Database>? _openingCompleter;
 
+  @override
   Future<DbProvider> init() async {
     await database;
     return this;
   }
 
+  @override
   Future<Database> get database async {
     final existing = _db;
     if (existing != null) return existing;
@@ -66,6 +69,7 @@ class DbProvider extends GetxService {
     }
   }
 
+  @override
   Future<void> close() async {
     final db = _db;
     _db = null;
@@ -74,6 +78,7 @@ class DbProvider extends GetxService {
     }
   }
 
+  @override
   Future<void> deleteDb() async {
     final dbDir = await getDatabasesPath();
     final dbPath = path.join(dbDir, _dbName);

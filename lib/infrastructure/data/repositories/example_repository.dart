@@ -1,12 +1,14 @@
 import '../../../../domain/models/example_model.dart';
+import '../../../../domain/repositories/i_example_repository.dart';
 import '../models/example_entity.dart';
-import '../providers/example_table_provider.dart';
+import '../providers/i_example_table_provider.dart';
 
-class ExampleRepository {
-  final ExampleTableProvider _provider;
+class ExampleRepository implements IExampleRepository {
+  final IExampleTableProvider _provider;
 
   ExampleRepository(this._provider);
 
+  @override
   Future<ExampleModel> save(ExampleModel item) async {
     final entity = ExampleEntity(
       id: item.id,
@@ -17,6 +19,7 @@ class ExampleRepository {
     return item.copyWith(id: id);
   }
 
+  @override
   Future<List<ExampleModel>> getAll() async {
     final entities = await _provider.getAll();
     return entities
@@ -30,6 +33,7 @@ class ExampleRepository {
         .toList();
   }
 
+  @override
   Future<int> update(ExampleModel item) async {
     final entity = ExampleEntity(
       id: item.id,
@@ -39,6 +43,7 @@ class ExampleRepository {
     return await _provider.update(entity);
   }
 
+  @override
   Future<int> delete(int id) async {
     return await _provider.delete(id);
   }
