@@ -13,34 +13,42 @@ A modern, scalable Flutter boilerplate utilizing **GetX** for state management, 
     *   **Sqflite & SQLCipher:** Fully implemented `DbProvider` ensuring encrypted local databases.
     *   **Concurrent Open Protection:** Uses `Completer` logic to prevent multiple database initialization attempts.
     *   **Auto-generated Passphrase:** Automatically generates and stores a secure 256-bit AES database key securely via `flutter_secure_storage`.
-*   **Clean Data Architecture:**
+*   **Clean Data Architecture & SOLID Principles:**
+    *   **Interfaces:** All services, repositories, and data providers are abstracted behind interfaces (`IExampleService`, `IDbProvider`, etc.) to decouple implementations and enhance testability.
     *   **Domain Model (`ExampleModel`):** Pure Dart object representing the business logic.
     *   **Data Entity (`ExampleEntity`):** Data Transfer Object (DTO) directly mapping database rows using `toMap()` and `fromMap()`.
-    *   **Table Provider (`ExampleTableProvider`):** Direct database execution (CRUD operations).
-    *   **Repository (`ExampleRepository`):** A wrapper connecting the Domain Model to the underlying Data Entities.
+    *   **Table Provider (`ExampleTableProvider`):** Direct database execution (CRUD operations), implementing `IExampleTableProvider`.
+    *   **Repository (`ExampleRepository`):** A wrapper connecting the Domain Model to the underlying Data Entities, implementing `IExampleRepository`.
 
 ## 📁 Project Structure
 
 ```text
 lib/
-├── domain/                  # Business logic and abstract models
-│   └── models/
-│       └── example_model.dart
+├── domain/                  # Business logic, interfaces, and abstract models
+│   ├── models/
+│   │   └── example_model.dart
+│   ├── repositories/        # Domain Repository Interfaces
+│   │   └── i_example_repository.dart
+│   └── services/            # Domain Service Interfaces
+│       └── i_example_service.dart
 ├── infrastructure/          # Core setup, services, and routing
 │   ├── business/
-│   │   ├── bindings/        # GetX Bindings (Main, Database)
+│   │   ├── bindings/        # GetX Bindings (Main, Database) injecting Interfaces
 │   │   └── controllers/     # GetX Controllers
 │   ├── constants/           # Constants (Colors, Strings)
 │   ├── data/
 │   │   ├── models/          # Data Transfer Objects (DTO) / Entities
 │   │   │   └── example_entity.dart
-│   │   ├── providers/       # Direct Database Access
+│   │   ├── providers/       # Direct Database Access and Interfaces
+│   │   │   ├── i_db_provider.dart
+│   │   │   ├── i_example_table_provider.dart
 │   │   │   └── example_table_provider.dart
 │   │   ├── repositories/    # Maps Entities to Domain Models
 │   │   │   └── example_repository.dart
 │   │   └── db_provider.dart # Encrypted Database Initialization
 │   ├── router.dart          # App Navigation
-│   └── services/            # Global Services (Translations, APIs, etc.)
+│   └── services/            # Global Concrete Services
+
 ├── presentation/            # User Interface
 │   ├── pages/               # Screens
 │   └── widgets/             # Reusable UI components
