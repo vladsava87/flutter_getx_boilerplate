@@ -27,10 +27,13 @@ lib/
 ├── domain/                  # Business logic, interfaces, and abstract models
 │   ├── models/
 │   │   └── example_model.dart
-│   ├── repositories/        # Domain Repository Interfaces
-│   │   └── i_example_repository.dart
-│   └── services/            # Domain Service Interfaces
-│       └── i_example_service.dart
+│   ├── interfaces/
+│   │   ├── repositories/
+│   │   │   └── i_example_repository.dart
+│   │   │   ├── i_db_provider.dart
+│   │   │   ├── i_example_table_provider.dart
+│   │   └── services/
+│   │       └── i_example_service.dart
 ├── infrastructure/          # Core setup, services, and routing
 │   ├── business/
 │   │   ├── bindings/        # GetX Bindings (Main, Database) injecting Interfaces
@@ -40,8 +43,6 @@ lib/
 │   │   ├── models/          # Data Transfer Objects (DTO) / Entities
 │   │   │   └── example_entity.dart
 │   │   ├── providers/       # Direct Database Access and Interfaces
-│   │   │   ├── i_db_provider.dart
-│   │   │   ├── i_example_table_provider.dart
 │   │   │   └── example_table_provider.dart
 │   │   ├── repositories/    # Maps Entities to Domain Models
 │   │   │   └── example_repository.dart
