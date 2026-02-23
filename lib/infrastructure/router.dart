@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../presentation/pages/home_page.dart';
-import 'business/bindings/main_bindings.dart';
+import 'business/bindings/home_bindings.dart';
 
 class AppRouter {
   static const String initial = '/';
@@ -10,7 +10,7 @@ class AppRouter {
     GetPage(
       name: initial,
       page: () => const HomePage(),
-      binding: MainBindings(),
+      binding: HomeBindings(),
     ),
   ];
 }

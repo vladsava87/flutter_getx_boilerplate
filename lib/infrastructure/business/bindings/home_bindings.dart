@@ -4,7 +4,7 @@ import '../controllers/home_controller.dart';
 import '../../services/example_service.dart';
 import '../../../domain/interfaces/services/i_example_service.dart';
 
-class MainBindings extends Bindings {
+class HomeBindings extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<IExampleService>(() => ExampleService(), fenix: true);
