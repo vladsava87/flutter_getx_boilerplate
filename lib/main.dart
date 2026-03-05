@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'infrastructure/constants/app_strings.dart';
 import 'infrastructure/data/db_provider.dart';
-import 'infrastructure/router.dart';
+import 'presentation/router.dart';
 import 'infrastructure/services/app_translations.dart';
 import 'infrastructure/services/example_service.dart';
 

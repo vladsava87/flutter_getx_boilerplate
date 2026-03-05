@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../presentation/pages/home_page.dart';
-import 'business/bindings/home_bindings.dart';
+import 'pages/home_page.dart';
+import 'bindings/home_bindings.dart';
 
 class AppRouter {
   static const String initial = '/';
